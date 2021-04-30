@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Sales</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body>
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="invoice">
+    <!-- title row -->
+    <div class="row">
+      <div class="col-12">
+        <h2 class="page-header">
+          <i class="fas fa-globe"></i> Fashion Feet.
+          <small class="float-right">Date: 30/04/2021</small>
+        </h2>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- info row -->
+    
+    <!-- /.row -->
+
+    <!-- Table row -->
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <table  class="table table-striped">
+          <thead>
+          <tr>
+                <th style="width: 10%" >Product ID</th>
+								<th style="width: 10%" >Category</th>
+								<th style="width: 10%" >Type</th>
+								
+								<th style="width: 10%" >Size</th>
+								<th style="width: 10%" >Quantity</th>
+								<th style="width: 10%" >Cost Price</th>
+								
+          </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<data.length; i++) { %> 
+              <tr>
+                <td><%= data[i].pid %></td>
+                <td><%= data[i].category %></td>
+                <td><%= data[i].type %></td>
+                <td><%= data[i].size %></td>
+                <td><%= data[i].stock %></td>
+                <td><%= data[i].sp %></td>
+                <td><a class="btn btn-info btn-sm" href="/edit"><i class="fas fa-pencil-alt"></i>Edit</a>
+										<a class="btn btn-danger btn-sm" href="/delete">
+											<i class="fas fa-trash">
+											</i>
+											Delete
+										</a></td>
+                
+              </tr>
+            <% } %> 
+          
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- ./wrapper -->
+<!-- Page specific script -->
+<script>
+  window.addEventListener("load", window.print());
+</script>
+</body>
+</html>
